@@ -1,12 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import axiosWithAuth from './utils/axiosWithAuth'
 
 const Login = () => {
+
+    axios.post('http://localhost:5000/api/login', userCredentials)
+        .then(res=> {
+            localStorage.setItem('token', res.data.token)
+        })
     
     return(<ComponentContainer>
         <ModalContainer>
             <h1>Welcome to Blogger Pro</h1>
             <h2>Please enter your account information.</h2>
+            <Form>
+                
+            </Form>
         </ModalContainer>
     </ComponentContainer>);
 }
